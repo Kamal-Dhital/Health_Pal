@@ -8,7 +8,6 @@ void main() {
 class EntryPoint extends StatelessWidget {
   const EntryPoint({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(title: 'Health Pal', home: const Onboarding1());
