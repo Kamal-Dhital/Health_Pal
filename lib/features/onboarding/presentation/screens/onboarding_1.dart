@@ -183,7 +183,7 @@ class _Onboarding1State extends State<Onboarding1> {
                 Row(
                   children: [
                     SizedBox(width: 8),
-                    Image.asset("assets/images/healthpal_logo.png"),
+                    Image.asset("assets/images/healthpal_logo_white.png"),
                   ],
                 ),
               ],
