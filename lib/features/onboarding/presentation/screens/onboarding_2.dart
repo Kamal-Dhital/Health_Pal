@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health_pal/features/auth/presentation/screens/login.dart';
 import 'package:health_pal/features/onboarding/presentation/screens/onboarding_3.dart';
-import 'package:health_pal/features/onboarding/presentation/widgets/custom_button.dart';
+import 'package:health_pal/shared/presentation/widgets/custom_button.dart';
 import 'package:health_pal/features/onboarding/presentation/widgets/coursel.dart';
 
 class Onboarding2 extends StatelessWidget {
