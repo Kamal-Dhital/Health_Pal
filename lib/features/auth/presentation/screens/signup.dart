@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:health_pal/features/auth/presentation/screens/forgot_password.dart';
-import 'package:health_pal/features/auth/presentation/screens/signup.dart';
+import 'package:health_pal/features/auth/presentation/screens/login.dart';
 import 'package:health_pal/features/auth/presentation/widgets/text_field_with_icon.dart';
 import 'package:health_pal/features/auth/presentation/widgets/third_party_signin_button.dart';
 import 'package:health_pal/features/home/presentation/screens/home.dart';
 import 'package:health_pal/shared/presentation/widgets/custom_button.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,24 +18,30 @@ class Login extends StatelessWidget {
             children: [
               Spacer(),
               Image.asset("assets/images/healthpal_logo_black.png"),
+              // SizedBox(height: 32),
               Spacer(),
               Text(
-                "Hi, Welcome Back!",
+                "Create Account",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
               ),
               Text(
-                "Hope you're doing fine.",
+                "We are here to help you.",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
               ),
               Spacer(),
-
+              TextFieldWithIcon(
+                hintText: 'Your Name',
+                icon: Icons.person,
+                keyboardType: TextInputType.emailAddress,
+                onChanged: (value) {},
+              ),
+              SizedBox(height: 16),
               TextFieldWithIcon(
                 hintText: 'Your Email',
                 icon: Icons.email_outlined,
                 keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {},
               ),
-
               SizedBox(height: 16),
               TextFieldWithIcon(
                 hintText: 'Password',
@@ -45,9 +50,8 @@ class Login extends StatelessWidget {
                 onChanged: (value) {},
               ),
               Spacer(),
-
               CustomButton(
-                text: "Sign In",
+                text: "Create Account",
                 backgroundColor: Color.fromRGBO(28, 42, 58, 1),
                 textColor: Color.fromRGBO(255, 255, 255, 1),
                 onPressed: () {
@@ -58,7 +62,6 @@ class Login extends StatelessWidget {
                 },
               ),
               Spacer(),
-
               Row(
                 children: [
                   Expanded(child: Divider(thickness: 2, color: Colors.grey)),
@@ -69,45 +72,30 @@ class Login extends StatelessWidget {
                 ],
               ),
               Spacer(),
-
               ThirdPartySigninButton(
-                labeltext: "Sign in with Google",
+                labeltext: "Continue with Google",
                 sourceFile:
                     "http://pngimg.com/uploads/google/google_PNG19635.png",
               ),
               ThirdPartySigninButton(
-                labeltext: "Sign in with Facebook",
+                labeltext: "Continue with Facebook",
                 sourceFile:
                     "https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19750.png",
               ),
               Spacer(),
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ForgotPassword(),
-                    ),
-                  );
-                },
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
-                ),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Don't have account yet?"),
+                  Text("Already have an account?"),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Signup()),
+                        MaterialPageRoute(builder: (context) => const Login()),
                       );
                     },
                     child: Text(
-                      "Sign up",
+                      "Login",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
